@@ -47,9 +47,17 @@ function getPageOffset() {
   };
 }
 
-if (_exenv.canUseDOM) {
+function initDOMListener() {
   document.body.addEventListener('mousewheel', (0, _debounce2.default)(fireListeners, 100, true));
   window.addEventListener('resize', (0, _debounce2.default)(fireListeners, 50, true));
+}
+
+if (_exenv.canUseDOM) {
+  if (document.body) {
+    initDOMListener();
+  } else {
+    document.addEventListener('DOMContentLoaded', initDOMListener);
+  }
 }
 
 var listenerIdCounter = 0;
