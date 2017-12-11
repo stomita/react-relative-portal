@@ -8,6 +8,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+exports.updateScroll = updateScroll;
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -50,6 +52,10 @@ function getPageOffset() {
 function initDOMListener() {
   document.body.addEventListener('mousewheel', (0, _debounce2.default)(fireListeners, 100, true));
   window.addEventListener('resize', (0, _debounce2.default)(fireListeners, 50, true));
+}
+
+function updateScroll() {
+  fireListeners();
 }
 
 if (_exenv.canUseDOM) {
