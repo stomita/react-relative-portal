@@ -113,6 +113,9 @@ var RelativePortal = function (_React$Component) {
           if (top !== _this2.state.top || left !== _this2.state.left || right !== _this2.state.right) {
             _this2.setState({ left: left, top: top, right: right });
           }
+          if (_this2.props.onScroll) {
+            _this2.props.onScroll();
+          }
         }
       };
       this.unsubscribe = subscribe(this.handleScroll);
@@ -180,6 +183,7 @@ RelativePortal.propTypes = {
   top: _react.PropTypes.number,
   children: _react.PropTypes.any,
   onOutClick: _react.PropTypes.func,
+  onScroll: _react.PropTypes.func,
   component: _react.PropTypes.string.isRequired
 };
 RelativePortal.defaultProps = {
