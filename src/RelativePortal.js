@@ -53,6 +53,7 @@ export default class RelativePortal extends React.Component {
     top: PropTypes.number,
     children: PropTypes.any,
     onOutClick: PropTypes.func,
+    onScroll: PropTypes.func,
     component: PropTypes.string.isRequired,
   };
 
@@ -79,6 +80,9 @@ export default class RelativePortal extends React.Component {
 
         if (top !== this.state.top || left !== this.state.left || right !== this.state.right) {
           this.setState({ left, top, right });
+        }
+        if (this.props.onScroll) {
+          this.props.onScroll();
         }
       }
     };
