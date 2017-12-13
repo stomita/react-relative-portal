@@ -14,6 +14,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _debounce = require('debounce');
 
 var _debounce2 = _interopRequireDefault(_debounce);
@@ -177,14 +181,14 @@ var RelativePortal = function (_React$Component) {
 }(_react2.default.Component);
 
 RelativePortal.propTypes = {
-  right: _react.PropTypes.number,
-  left: _react.PropTypes.number,
-  fullWidth: _react.PropTypes.bool,
-  top: _react.PropTypes.number,
-  children: _react.PropTypes.any,
-  onOutClick: _react.PropTypes.func,
-  onScroll: _react.PropTypes.func,
-  component: _react.PropTypes.string.isRequired
+  right: _propTypes2.default.number,
+  left: _propTypes2.default.number,
+  fullWidth: _propTypes2.default.bool,
+  top: _propTypes2.default.number,
+  children: _propTypes2.default.any,
+  onOutClick: _propTypes2.default.func,
+  onScroll: _propTypes2.default.func,
+  component: _propTypes2.default.string.isRequired
 };
 RelativePortal.defaultProps = {
   left: 0,
