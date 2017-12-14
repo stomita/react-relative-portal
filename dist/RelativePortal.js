@@ -54,7 +54,7 @@ function getPageOffset() {
 }
 
 function initDOMListener() {
-  document.body.addEventListener('mousewheel', (0, _debounce2.default)(fireListeners, 100, true));
+  document.addEventListener('wheel', (0, _debounce2.default)(fireListeners, 100, true));
   window.addEventListener('resize', (0, _debounce2.default)(fireListeners, 50, true));
 }
 
@@ -111,7 +111,7 @@ var RelativePortal = function (_React$Component) {
           var rect = _this2.element.getBoundingClientRect();
           var pageOffset = getPageOffset();
           var top = pageOffset.y + rect.top;
-          var right = window.innerWidth - rect.right + pageOffset.x;
+          var right = window.innerWidth - rect.right - pageOffset.x;
           var left = pageOffset.x + rect.left;
 
           if (top !== _this2.state.top || left !== _this2.state.left || right !== _this2.state.right) {
