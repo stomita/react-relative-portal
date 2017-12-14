@@ -22,7 +22,7 @@ function getPageOffset() {
 }
 
 function initDOMListener() {
-  document.body.addEventListener('mousewheel', debounce(fireListeners, 100, true));
+  document.addEventListener('wheel', debounce(fireListeners, 100, true));
   window.addEventListener('resize', debounce(fireListeners, 50, true));
 }
 
